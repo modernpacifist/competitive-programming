@@ -8,6 +8,8 @@ import (
 
 func MultiTable(number int) string {
     var a string
+
+
     for i := 1; i <= 10; i++ {
         a += strconv.Itoa(i)
         a += " * "
