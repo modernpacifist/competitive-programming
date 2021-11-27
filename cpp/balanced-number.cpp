@@ -3,53 +3,21 @@
 
 
 std::string balancedNum(unsigned long long int number) {
-    std::string string_number = std::to_string(number);
+    auto number_str = std::to_string(number);
+    int balance = 0;
 
-    int string_length = string_number.length();
-
-    if (string_length == 1) {
-        return "Balanced";
+    for (size_t i = 0, j = number_str.size() + 1; j < number_str.size(); ++i, ++j) {
+        balance += number_str[i];
+        balance -= number_str[j];
     }
 
-    if (string_length % 2 == 0) {
-        int left_sum = 0, right_sum = 0;
-
-        for (int i = 0; i < string_length / 2 - 1; ++i) {
-            left_sum += string_number[i] - 48;
-        }
-
-        for (int i = string_length / 2 + 1; i < string_length; ++i) {
-            right_sum += string_number[i] - 48;
-        }
-
-        if (left_sum == right_sum) {
-            return "Balanced";
-        }
-
-        return "Not Balanced";
-
-    } else {
-        int left_sum = 0, right_sum = 0;
-
-        for (int i = 0; i < string_length / 2; ++i) {
-            left_sum += string_number[i] - 48;
-        }
-
-        for (int i = string_length / 2 + 1; i < string_length; ++i) {
-            right_sum += string_number[i] - 48;
-        }
-
-        if (left_sum == right_sum) {
-            return "Balanced";
-        }
-
-        return "Not Balanced";
-    }
+    return (balance == 0) ? "Balanced" : "Not Balanced";
 }
 
 
 int main() {
     std::cout << balancedNum(1301) << std::endl;
+    std::cout << balancedNum(56239814) << std::endl;
 
     return 0;
 }
