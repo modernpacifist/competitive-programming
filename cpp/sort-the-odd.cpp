@@ -16,7 +16,7 @@ std::vector<int> sortArray(std::vector<int> a) {
     std::sort(odd_values.begin(), odd_values.end());
 
     for (size_t i = 0; i < odd_positions.size(); ++i) {
-        a[odd_values[i]]
+        a[odd_positions[i]] = odd_values[i];
     }
 
     return a;
@@ -24,10 +24,11 @@ std::vector<int> sortArray(std::vector<int> a) {
 
 
 int main() {
-    std::vector<int> expected = {1, 3, 2, 8, 5, 4};
     std::vector<int> a = {5, 3, 2, 8, 1, 4};
 
-    sortArray(a);
+    for (auto i : sortArray(a)) {
+        std::cout << i << " ";
+    }
 
     return 0;
 }
