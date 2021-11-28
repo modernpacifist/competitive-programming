@@ -1,24 +1,22 @@
 #include <iostream>
 
 
+int M(int);
+int F(int);
+
+
 int M(int n) {
-    if (n == 0) {
-        return 0;
-    }
-    return n - F(M(n - 1));
+    return (n == 0) ? 0 : n - F(M(n - 1));
 }
 
 
 int F(int n) {
-    if (n == 0) {
-        return 1;
-    }
-    return n - M(F(n - 1));
+    return (n == 0) ? 1 : n - M(F(n - 1));
 }
 
 
 int main() {
-    std::cout << "hello world" << std::endl;
+    std::cout << F(5) << std::endl;
 
     return 0;
 }
