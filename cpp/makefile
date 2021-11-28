@@ -1,2 +1,2 @@
 default:
-	g++ $(src_file) && ./a.out
+	g++ $(src_file) && ./a.out && rm ./a.out
