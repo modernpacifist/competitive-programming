@@ -30,11 +30,16 @@ class Dioph {
 
 
 int main() {
-    Dioph d;
+    //Dioph d;
 
-    for (auto i : d.solEquaStr(90005)) {
-        std::cout << i << std::endl;
-    }
+    //for (auto i : d.solEquaStr(90005)) {
+        //std::cout << i.first << std::endl;
+        //std::cout << i.second << std::endl;
+    //}
+
+    std::pair<long, long> a = {1, 2};
+
+    std::cout << a.first << " " << a.second << std::endl;
 
     return 0;
 }
