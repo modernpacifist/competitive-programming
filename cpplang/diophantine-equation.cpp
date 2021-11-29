@@ -9,19 +9,16 @@ class Dioph {
         static std::vector<std::pair <long, long>> solEquaStr(long long n) {
             std::vector<std::pair <long, long>> res;
             std::pair<long, long> poly_pair;
-            long long x = n, y;
 
             // x^2 - 4 * y^2 = n
-            while (x >= 0 || y >= 0) {
-                y = x;
-                
-                if (pow(x, 2) - 4 * pow(y, 2) == n) {
-                    poly_pair = std::make_pair(x, y);
+            for (long long x = n; x >= 0; x--) {
+                for (long long y = x; y >= 0; y--) {
+                    if (pow(x, 2) - 4 * pow(y, 2) == n) {
+                        poly_pair = std::make_pair(x, y);
 
-                    res.push_back(poly_pair);
+                        res.push_back(poly_pair);
+                    }
                 }
-
-                x--;
             }
 
             return res;
@@ -30,16 +27,11 @@ class Dioph {
 
 
 int main() {
-    //Dioph d;
+    Dioph d;
 
-    //for (auto i : d.solEquaStr(90005)) {
-        //std::cout << i.first << std::endl;
-        //std::cout << i.second << std::endl;
-    //}
-
-    std::pair<long, long> a = {1, 2};
-
-    std::cout << a.first << " " << a.second << std::endl;
+    for (auto i : d.solEquaStr(90005)) {
+        std::cout << i.first << " " << i.second << std::endl;
+    }
 
     return 0;
 }
