@@ -17,7 +17,6 @@ class Dioph {
                         poly_pair = std::make_pair(x, y);
 
                         res.push_back(poly_pair);
-                        break;
                     }
                 }
             }
