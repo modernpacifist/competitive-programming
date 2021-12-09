@@ -6,7 +6,7 @@
 
 class Dioph {
     private:
-        static int gcd(nt a, int b) {
+        static int gcd(int a, int b) {
             return (a % b == 0) ? abs(b) : gcd(b, a % b);
         }
 
