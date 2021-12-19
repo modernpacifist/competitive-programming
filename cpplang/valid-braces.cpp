@@ -3,39 +3,44 @@
 #include <map>
 
 
+bool find_opposite_bracket(std::string braces_string, char opposite_bracket) {
+    if (braces_string.find(opposite_bracket) != std::string::npos) {
+        return true;
+    }
+    return false;
+}
+
+
 bool valid_braces(std::string braces_string) {
     if (braces_string.length() % 2 == 1) {
         return false;
     }
 
-    //std::map<char, int> braces_dict;
-
-    //for (auto i : braces_string) {
-        //if (braces_dict.count(i)) {
-            //++braces_dict[i];
-        //} else {
-            //braces_dict.insert({i, 1});
-        //}
-    //}
-
+    int res {0};
     for (auto i : braces_string) {
         switch (i) {
             case '(':
-                <code>
+                res += find_opposite_bracket(braces_string, ')');
                 break;
-            default:
-                <default_case>
+            case '[':
+                res += find_opposite_bracket(braces_string, ']');
+                break;
+            case '{':
+                res += find_opposite_bracket(braces_string, '}');
+                break;
         }
     }
 
-    return true;
+    return (braces_string.length() % res == 0);
 }
 
 
 int main() {
-    const std::string test {"(){}[]"};
-
-    std::cout << valid_braces(test) << std::endl;
+    std::cout << valid_braces("(){}[]") << std::endl;
+    std::cout << valid_braces("([{}])") << std::endl;
+    std::cout << valid_braces("(})") << std::endl;
+    std::cout << valid_braces("[(])") << std::endl;
+    std::cout << valid_braces("[({})](]") << std::endl;
 
     return 0;
 }
