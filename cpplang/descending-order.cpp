@@ -1,35 +1,36 @@
 #include <iostream>
-#include <cinttypes>
 #include <vector>
 #include <bits/stdc++.h>
+#include <cinttypes>
 
 
 uint64_t descendingOrder(uint64_t a) {
-    std::vector<int> b;
+    std::vector<uint64_t> b;
 
-    for (int i = 0; i >= 0; --i) {
+    while (a > 0) {
         b.push_back(a % 10);
         a /= 10;
     }
 
-    //std::sort(b.begin(), b.end(), std::greater<int>());
+    std::sort(b.begin(), b.end(), std::greater<uint64_t>());
 
-    for (auto i : b) {
-        std::cout << i << " ";
+    uint64_t res = 0;
+    for (auto d : b) {
+        res = res * 10 + d;
     }
 
-    //int res = 0;
-    //for (auto i : b) {
-        //res = res * 10 + i;
-    //}
-
-    //return res;
-    return 1;
+    return res;
 }
 
 
 int main() {
     std::cout << descendingOrder(42145) << std::endl;
+    std::cout << descendingOrder(0) << std::endl;
+    std::cout << descendingOrder(1) << std::endl;
+    std::cout << descendingOrder(15) << std::endl;
+    std::cout << descendingOrder(1021) << std::endl;
+    std::cout << descendingOrder(123456789) << std::endl;
+    std::cout << descendingOrder(1407719819) << std::endl;
     
     return 0;
 }
