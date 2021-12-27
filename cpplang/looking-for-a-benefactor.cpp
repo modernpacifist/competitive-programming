@@ -14,7 +14,6 @@ public:
         }
 
         double h = navg * (arr.size() + 1) - sum;
-        std::cout << "h: " << h << std::endl;
 
         if (h <= 0) {
             throw std::logic_error("Wrong value");
