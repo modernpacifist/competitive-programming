@@ -22,6 +22,9 @@ int main() {
     Vector a = Vector(2, 0, -1);
     Vector b = Vector(0, -2, 1);
 
+    auto c = cross_product(a, b);
+
+    std::cout << c.x << " " << c.y << " "<< c.z << " "   << std::endl;
     
     return 0;
 }
