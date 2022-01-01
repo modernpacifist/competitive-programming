@@ -24,7 +24,7 @@ int main() {
 
     auto c = cross_product(a, b);
 
-    std::cout << c.x << " " << c.y << " "<< c.z << " "   << std::endl;
+    std::cout << c.x << " " << c.y << " "<< c.z << " " << std::endl;
     
     return 0;
 }
