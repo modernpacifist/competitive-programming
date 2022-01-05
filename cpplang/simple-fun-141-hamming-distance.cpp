@@ -4,18 +4,18 @@
 
 
 std::uint32_t hamming_distance(std::uint32_t a, std::uint32_t b) {
-    int count = 0;
-    for (int i = 0; i < 32; i++) {
-        if (((a >> i) & 1) != ((b >> i) & 1)) {
-            count++;
-        }
+    std::uint32_t r = 0, c = (a ^ b);
+    while (c) {
+        r += c & 1;
+        c >>= 1;
     }
-    return count;
+    return r;
 }
 
 
 int main() {
-    std::cout << hamming_distance(25, 87) << std::endl;
+    std::cout << hamming_distance(12, 15) << std::endl;
+    //std::cout << hamming_distance(25, 87) << std::endl;
     
     return 0;
 }
