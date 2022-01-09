@@ -6,17 +6,13 @@ std::vector<int> tribonacci(std::vector<int> signature, int n) {
     if (n == 0) {
         return {};
     }
-    if (signature.size() > n) {
-        for (size_t i = 0; i < signature.size() - n; ++i) {
-            signature.pop_back();
-        }
-        return signature;
+    if (n < 3) {
+        signature.resize(n);
     }
-    std::vector<int> result = signature;
-    for (int i = 2; result.size() < n; ++i) {
-        result.push_back(result.at(i - 2) + result.at(i - 1) + result.at(i));
+    for (int i = 2; signature.size() < n; ++i) {
+        signature.push_back(signature.at(i - 2) + signature.at(i - 1) + signature.at(i));
     }
-    return result;
+    return signature;
 }
 
 
