@@ -13,5 +13,5 @@ func PassHash(str string) string {
 }
 
 func main() {
-	fmt.Println("vim-go")
+	fmt.Println(PassHash("password"))
 }
