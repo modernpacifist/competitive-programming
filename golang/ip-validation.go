@@ -8,6 +8,7 @@ import (
 
 func Is_valid_ip(ip string) bool {
 	flag := true
+	//r := regexp.MustCompile(`(?P<first>[0-9]{1,3}).(?P<second>[0-9]{1,3}).(?P<third>[0-9]{1,3}).(?P<fourth>[0-9]{1,3})`)
 	r := regexp.MustCompile(`(?P<first>[0-9]{1,3}).(?P<second>[0-9]{1,3}).(?P<third>[0-9]{1,3}).(?P<fourth>[0-9]{1,3})`)
 	names := r.SubexpNames()
 
