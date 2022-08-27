@@ -10,6 +10,7 @@ std::string reverse_words(std::string str) {
         if (isspace(i)) {
             std::cout << i << '\n';
         } else {
+            
         }
     }
 
