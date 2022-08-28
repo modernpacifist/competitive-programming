@@ -5,18 +5,21 @@
 
 std::string reverse_words(std::string str) {
     std::string result_string;
-
-    for (char i : str) {
-        std::string buffer_string;
-        if (!isspace(i)) {
-            buffer_string += i;
+    std::string temp;
+    for (int i = 0; i < (int)str.size(); ++i) {
+        if (!isspace(str[i])) {
+            temp += str.at(i);
         } else {
-            std::reverse(buffer_string.begin(), buffer_string.end());
-            std::cout << buffer_string << '\n';
-            result_string += buffer_string;
-            buffer_string.clear();
+            std::reverse(temp.begin(), temp.end());
+            std::cout << temp << std::endl;
+            result_string += temp;
+            result_string += " ";
+            temp.clear();
         }
     }
+
+    std::reverse(temp.begin(), temp.end());
+    result_string += temp;
 
     return result_string;
 }
