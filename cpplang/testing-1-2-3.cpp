@@ -5,10 +5,14 @@
 
 std::vector<std::string> number(const std::vector<std::string> &lines) {
     std::vector<std::string> res;
-    for (auto i : lines) {
-        std::cout << i << '\n';
-        //res.push_back(i);
+
+    for (size_t i = 0; i < lines.size(); ++i) {
+        //res.push_back(std::format("{}: {}", i+1, lines.at(i)));
+        std::string temp = i+1 + ": " + lines.at(i);
+        res.push_back(temp);
+        //res.push_back(std::format("{}: {}", i+1, lines.at(i)));
     }
+
     return res;
 }
 
@@ -16,11 +20,11 @@ std::vector<std::string> number(const std::vector<std::string> &lines) {
 int main() {
     std::vector<std::string> sample {"a", "b", "c"};
 
-    for (auto i : sample) {
-        std::cout << std::format("{} hehe", i) << '\n';
-    }
-
     //number(sample);
+
+    for (auto i : number(sample)) {
+        std::cout << i << '\n';
+    }
     
     return 0;
 }
