@@ -10,6 +10,7 @@ std::vector<std::string> number(const std::vector<std::string> &lines) {
         //res.push_back(std::format("{}: {}", i+1, lines.at(i)));
         std::string temp = i+1 + ": " + lines.at(i);
         res.push_back(temp);
+        temp.clear();
         //res.push_back(std::format("{}: {}", i+1, lines.at(i)));
     }
 
