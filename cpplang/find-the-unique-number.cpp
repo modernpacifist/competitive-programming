@@ -6,9 +6,13 @@ float find_uniq(const std::vector<float> &v) {
     float res = 0;
     float temp = 0;
     int counter = 0;
+    std::pair<float, int> res1;
 
     for (auto i : v) {
-        std::cout << i << '\n';
+
+        if () {
+
+        }
     }
 
     return res;
