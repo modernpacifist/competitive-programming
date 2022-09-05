@@ -11,9 +11,8 @@ float find_uniq(const std::vector<float> &v) {
 
 
 int main() {
-    std::vector<float> a {1,1,2,1,1};
-
-    find_uniq(a);
+    std::cout << find_uniq(std::vector<float>{1, 1, 2, 1, 1}) << '\n';
+    std::cout << find_uniq(std::vector<float>{0, 0, 0.55, 0, 0}) << '\n';
     
     return 0;
 }
