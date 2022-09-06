@@ -1,6 +1,8 @@
 #include <iostream>
 #include <algorithm>
 
+/* TODO: finish <05-09-22, modernpacifist> */
+
 
 float find_uniq(const std::vector<float> &v) {
     float res = 0;
