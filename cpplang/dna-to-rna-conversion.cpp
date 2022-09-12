@@ -3,7 +3,8 @@
 
 
 std::string DNAtoRNA(std::string dna){
-    return "";
+    std::replace(dna.begin(), dna.end(), 'T', 'U');
+    return dna;
 }
 
 
