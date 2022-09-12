@@ -3,11 +3,11 @@
 
 
 std::vector<int> maps(const std::vector<int> & values) {
+    std::vector<int> res;
     for (size_t i = 0; i < values.size(); ++i) {
-        values.at(i) = values.at(i) * 2;
-        std::cout << values.at(i) << '\n';
+        res.push_back(values.at(i) * 2);
     }
-    return values;
+    return res;
 }
 
 
