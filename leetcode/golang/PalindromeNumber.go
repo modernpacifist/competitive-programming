@@ -3,9 +3,13 @@ package main
 import "fmt"
 
 func isPalindrome(x int) bool  {
-	fmt.Println("vim-go")
+	if x < 0 {
+		return false
+	}
+	return true
 }
 
 func main() {
-	isPalindrome(5)
+	fmt.Println(isPalindrome(121))
+	fmt.Println(isPalindrome(-121))
 }
