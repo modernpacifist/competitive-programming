@@ -2,6 +2,12 @@ package main
 
 import "fmt"
 
+func twoSum(nums []int, target int) []int {
+
+}
+
 func main() {
-	fmt.Println("vim-go")
+	nums int = [2, 7, 11, 15]
+
+	fmt.Println(twoSum)
 }
